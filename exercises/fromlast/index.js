@@ -11,6 +11,16 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+  let arr = [];
+  let pointer = list.head;
+
+  while (pointer) {
+    arr.push(pointer);
+    pointer = pointer.next;
+  }
+
+  return arr.slice(arr.length - 1 - n)[0];
+}
 
 module.exports = fromLast;
